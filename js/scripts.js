@@ -1,12 +1,21 @@
-var leapYear = function(year) {
-  //Lines 2-6 are not necessary for functionality because everything that's not a leap year is returned as false. Lines are used for readability and logic
-  if (parseInt(year) === NaN) {
-    return false;
-  } else if (year === "september") {
-    return false;
-  } else if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
-    return true;
-  } else {
-    return false;
-  }
-};
+$(document).ready(function() {
+$("#counting").submit(function(event){
+
+var countToInput = parseInt($("#countTo").val());
+var countByInput = parseInt($("#countBy").val());
+// countToInput=20
+// countByInput=5
+
+debugger;
+var total=[];
+for(var i = 0; i <= countToInput; i += countByInput) {
+  total.push(i);
+}
+$("#results").text(total);
+
+
+
+alert("after");
+event.preventDefault();
+ });
+});
