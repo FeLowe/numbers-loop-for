@@ -4,19 +4,19 @@ $(document).ready(function() {
   $("#word-puzzle").submit(function(event){
 
 
-    //
-    var s = 'This is my string';
-    var sentence = s.split("")
+    var s = $("#sentence").val();
+    var sentence = s.split("");
     var vowels =['a','e','i','o','u'];
 
-    for (var i = 0; i < sentence.length; i++){
+    for (var i = 0; i < sentence.length; i++) {
       for(var x = 0; x < vowels.length; x++) {
-        if (sentence[i] === vowels[x]) {
-          sentence[i].replace("-");
+        if (sentence[i][x] === vowels[x]) {
+          sentence[i]= "-";
         }
       }
     }
-    $("#results").text(sentence);
+    var str = sentence.join("");
+    $("#results").text(" " + str);
 
     event.preventDefault();
   });
